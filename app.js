@@ -1,7 +1,7 @@
 const express = require("express");
 const redisClient = require("./redis");
-const urlShortenerRouter = require("./routes/redirectRouter");
-const redirectRouter = require("./routes/urlShortenerRouter");
+const redirectRouter = require("./routes/redirectRouter");
+const urlShortenerRouter = require("./routes/urlShortenerRouter");
 require("dotenv").config();
 
 const app = express();
