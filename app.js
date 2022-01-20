@@ -1,5 +1,7 @@
 const express = require("express");
 const redisClient = require("./redis");
+const urlShortenerRouter = require("./routes/url");
+const redirectRouter = require("./routes");
 require("dotenv").config();
 
 const app = express();
@@ -8,8 +10,8 @@ const app = express();
 app.use(express.json({ extended: false }));
 
 // Routes
-app.use("/api/v1/url", () => {}); // Shorten URL
-app.use("/", () => {}); // Redirect to the original URL
+app.use("/api/v1/url", urlShortenerRouter); // Shorten URL
+app.use("/", redirectRouter); // Redirect to the original URL
 
 const PORT = process.env.PORT || 3000;
 
